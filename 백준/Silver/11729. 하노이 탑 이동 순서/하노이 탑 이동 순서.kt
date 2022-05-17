@@ -3,7 +3,7 @@ import java.lang.StringBuilder
 fun main() {
     val n = readLine()!!.toInt()
     var count = 0
-    var route = StringBuilder()
+    val route = StringBuilder()
     fun hanoi(n: Int, from: Int, to: Int, sub: Int) {
         count++
         if (n == 1) {
