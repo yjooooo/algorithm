@@ -1,4 +1,6 @@
 fun main() {
     val n = readLine()!!.split("")
-    n.sortedDescending().forEach { print(it) }
+    val answer = StringBuilder()
+    n.sorted().forEach { answer.append(it) }
+    print(answer.reversed())
 }
