@@ -1,5 +1,3 @@
-import kotlin.collections.ArrayList
-
 fun main() {
     val n = readLine()!!.toInt()
     val answer = StringBuilder()
@@ -7,10 +5,9 @@ fun main() {
     for (i in 0 until n) {
         arr.add(readLine()!!.toInt())
     }
-    arr.sort().apply {
-        for(i in arr.indices){
-            answer.append(arr[i]).append("\n")
-        }
+    arr.sort()
+    for (i in 0 until n) {
+        answer.append("${arr[i]}\n")
     }
     println(answer)
 }
