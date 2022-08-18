@@ -1,9 +1,6 @@
 class Solution {
-    private val a = listOf(1, 2, 3, 4, 5)
-    private val b = listOf(2, 1, 2, 3, 2, 4, 2, 5)
-    private val c = listOf(3, 3, 1, 1, 2, 2, 4, 4, 5, 5)
     fun solution(answers: IntArray): IntArray {
-        var answer = mutableListOf<Int>()
+        val answer = mutableListOf<Int>()
         val scores = intArrayOf(0, 0, 0)
 
         for ((i, ans) in answers.withIndex()) {
@@ -25,5 +22,11 @@ class Solution {
         }
 
         return answer.toIntArray()
+    }
+
+    companion object {
+        val a = listOf(1, 2, 3, 4, 5)
+        val b = listOf(2, 1, 2, 3, 2, 4, 2, 5)
+        val c = listOf(3, 3, 1, 1, 2, 2, 4, 4, 5, 5)
     }
 }
