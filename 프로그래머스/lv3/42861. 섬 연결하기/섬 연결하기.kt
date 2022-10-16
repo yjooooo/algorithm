@@ -48,7 +48,7 @@ class Solution {
     // 현재 parent 업데이트 된다면 현재 parent 값과 같은 parent 를 갖고 있는 정점들도 업데이트 해줘야 함
     private fun updateOthers(oldParent: Int, newParent: Int) {
         for (i in parents.indices) {
-            if (parents[i] == oldParent) {
+            if (find(i) == oldParent) {
                 parents[i] = newParent
             }
         }
