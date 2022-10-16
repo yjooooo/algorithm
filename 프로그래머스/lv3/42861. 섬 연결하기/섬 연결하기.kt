@@ -4,8 +4,8 @@ class Solution {
 
     fun solution(n: Int, costs: Array<IntArray>): Int {
         var answer = 0
-        // 비용의 오름차순으로 간선 정렬
-        val sortedCosts = costs.copyOf().apply { sortWith(compareBy({ it[2] }, { it[0] })) }
+        // 간선 비용의 오름차순으로 정렬
+        val sortedCosts = costs.copyOf().apply { sortBy { it[2] } }
         // 정점의 parents 배열 초기화 (초기 상태는 parent = 정점 자기 자신)
         for (i in 0 until n) {
             parents.add(i)
