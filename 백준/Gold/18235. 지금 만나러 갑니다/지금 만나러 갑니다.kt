@@ -9,41 +9,28 @@ fun main() {
     val a = input[1].toInt()
     val b = input[2].toInt()
 
-    val aSet = mutableSetOf<Int>()
-    val bSet = mutableSetOf<Int>()
+    val aSet = mutableSetOf<Int>(a)
+    val bSet = mutableSetOf<Int>(b)
 
     var answer = 1
     while (true) {
-        var offset = 2.0.pow(answer - 1).toInt()
+        val offset = 2.0.pow(answer - 1).toInt()
 
-        if (answer == 1) {
+        val oldASet = aSet.toSet()
+        val oldBSet = bSet.toSet()
+        aSet.clear()
+        bSet.clear()
+        oldASet.forEach { a ->
             listOf(a - offset, a + offset).forEach { newA ->
                 if (isInLine(max, newA)) {
                     aSet.add(newA)
                 }
             }
+        }
+        oldBSet.forEach { b ->
             listOf(b - offset, b + offset).forEach { newB ->
                 if (isInLine(max, newB)) {
                     bSet.add(newB)
-                }
-            }
-        } else {
-            val oldASet = aSet.toSet()
-            val oldBSet = bSet.toSet()
-            aSet.clear()
-            bSet.clear()
-            oldASet.forEach { a ->
-                listOf(a - offset, a + offset).forEach { newA ->
-                    if (isInLine(max, newA)) {
-                        aSet.add(newA)
-                    }
-                }
-            }
-            oldBSet.forEach { b ->
-                listOf(b - offset, b + offset).forEach { newB ->
-                    if (isInLine(max, newB)) {
-                        bSet.add(newB)
-                    }
                 }
             }
         }
